@@ -25,5 +25,19 @@ export type SelectMenuProps = {
 export interface CardComponentProps {
   cardTitle: string;
   cardInner: React.ReactNode;
-  cardButton: React.ReactNode;
+  cardButton?: React.ReactNode;
+  className?: string;
+}
+
+export interface ButtonProps {
+  buttonText?: string;
+  buttonOnClick?: () => void;
+  buttonType: 'button' | 'submit' | 'reset' | undefined;
+  buttonImageUrl?: string;
+  className?: string;
+}
+
+export interface ModaleProps {
+  children: React.ReactNode;
+  onClose: () => void;
 }

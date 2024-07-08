@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
 import styles from './cooking-list.module.css';
 import {
   firstDishTitle,
@@ -7,9 +8,9 @@ import {
 } from '../../data/textProps';
 import { useDishes } from '../../context/DishesContext';
 import useDevice from '../../utils/useDevice';
-// import clsx from 'clsx';
 import CardComponent from '../card-component/card-component';
 import { CookingListProps } from '../types';
+import Button from '../button/button';
 
 export const CookingList: React.FC<CookingListProps> = ({
   setSelectedFirstDish,
@@ -23,6 +24,9 @@ export const CookingList: React.FC<CookingListProps> = ({
     isFull: boolean;
   } | null>(null);
   const [selectedSecondDish, setSelectedSecondDishState] = useState<string>('');
+  const [isFirstDropdownOpen, setFirstDropdownOpen] = useState<boolean>(false);
+  const [isSecondDropdownOpen, setSecondDropdownOpen] =
+    useState<boolean>(false);
 
   const handleFirstDishChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -64,26 +68,52 @@ export const CookingList: React.FC<CookingListProps> = ({
     setSelectedSecondDishState(selectedDish.name);
   };
 
+  const toggleFirstDropdown = () => {
+    setFirstDropdownOpen((prev) => !prev);
+  };
+
+  const toggleSecondDropdown = () => {
+    setSecondDropdownOpen((prev) => !prev);
+  };
+
   return (
     <>
       <CardComponent
         cardTitle={firstDishTitle}
         cardInner={
-          <select
-            value={selectedFirstDish ? selectedFirstDish.name : ''}
-            onChange={handleFirstDishChange}
-            className={styles.dropdown}
-          >
-            <option value=''>Выберите блюдо</option>
-            {firstDishes.map((dish) => (
-              <option key={dish._id} value={dish.name}>
-                {dish.name}
-              </option>
-            ))}
-          </select>
+          <div className={styles.dropdownWrapper}>
+            <select
+              value={selectedFirstDish ? selectedFirstDish.name : ''}
+              onChange={handleFirstDishChange}
+              onClick={toggleFirstDropdown}
+              onBlur={() => setFirstDropdownOpen(false)}
+              className={styles.dropdown}
+            >
+              <option value=''>Выберите блюдо</option>
+              {firstDishes.map((dish) => (
+                <option
+                  key={dish._id}
+                  value={dish.name}
+                  className={styles.dropdownOption}
+                >
+                  {dish.name}
+                </option>
+              ))}
+            </select>
+            <span
+              className={clsx(styles.arrowIcon, {
+                [styles.open]: isFirstDropdownOpen
+              })}
+            />
+          </div>
         }
         cardButton={
-          <button onClick={selectRandomFirstDish}>{randomButtonText}</button>
+          <Button
+            buttonType='button'
+            buttonOnClick={selectRandomFirstDish}
+            buttonText={randomButtonText}
+            buttonImageUrl={require('../../../public/images/icons/icon-dice-dark.png')}
+          />
         }
       />
 
@@ -91,24 +121,42 @@ export const CookingList: React.FC<CookingListProps> = ({
         <CardComponent
           cardTitle={secondDishTitle}
           cardInner={
-            <select
-              value={selectedSecondDish}
-              onChange={(e) => {
-                setSelectedSecondDish(e.target.value);
-                setSelectedSecondDishState(e.target.value);
-              }}
-              className={styles.dropdown}
-            >
-              <option value=''>Выберите блюдо</option>
-              {secondDishes.map((dish) => (
-                <option key={dish._id} value={dish.name}>
-                  {dish.name}
-                </option>
-              ))}
-            </select>
+            <div className={styles.dropdownWrapper}>
+              <select
+                value={selectedSecondDish}
+                onChange={(e) => {
+                  setSelectedSecondDish(e.target.value);
+                  setSelectedSecondDishState(e.target.value);
+                }}
+                onClick={toggleSecondDropdown}
+                onBlur={() => setSecondDropdownOpen(false)}
+                className={styles.dropdown}
+              >
+                <option value=''>Выберите блюдо</option>
+                {secondDishes.map((dish) => (
+                  <option
+                    key={dish._id}
+                    value={dish.name}
+                    className={styles.dropdownOption}
+                  >
+                    {dish.name}
+                  </option>
+                ))}
+              </select>
+              <span
+                className={clsx(styles.arrowIcon, {
+                  [styles.open]: isSecondDropdownOpen
+                })}
+              />
+            </div>
           }
           cardButton={
-            <button onClick={selectRandomSecondDish}>{randomButtonText}</button>
+            <Button
+              buttonType='button'
+              buttonOnClick={selectRandomSecondDish}
+              buttonText={randomButtonText}
+              buttonImageUrl={require('../../../public/images/icons/icon-dice-dark.png')}
+            />
           }
         />
       )}

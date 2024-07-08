@@ -33,7 +33,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]__[hash:base64:5]' // Изменение настройки идентификации классов
+                localIdentName: '[local]__[hash:base64:5]' 
               }
             }
           },
@@ -55,8 +55,10 @@ module.exports = {
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      favicon: './public/favicon.ico' 
     }),
+
     new Dotenv()
   ],
   resolve: {
@@ -76,7 +78,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/' 
   },
   devServer: {
     static: path.join(__dirname, './dist'),

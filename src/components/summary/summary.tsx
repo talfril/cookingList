@@ -20,6 +20,14 @@ export const Summary: React.FC<SummaryProps> = ({ firstDish, secondDish }) => (
       {secondDish && <div className={styles.selectedDish}>{secondDish}</div>}
     </div>
     {firstDish && <div className={styles.bonAppetit}>{bonAppetit}</div>}
+    <a
+      className={styles.iconsLink}
+      href='https://icons8.com'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      В работе использованы иконки icons8.com
+    </a>
   </div>
 );
 

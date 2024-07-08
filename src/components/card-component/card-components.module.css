@@ -1,30 +1,33 @@
 .card {
-    background-color: var(--menu-color);
-    padding: 20px 20px;
-    color: var(--font-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    border: 2px var(--main-font-color) solid;
-    border-radius: 20px;
-    box-shadow: var(--main-font-color) 2px 2px 15px;
-    align-items: center;
-  
-    &__desktop {
-      width: 40%;
-    }
-  
-    &__tablet {
-      width: 60%;
-    }
-  
-    &__mobile {
-      width: 80%;
-    }
+  background-color: var(--menu-color);
+  padding: 20px 20px;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border: 2px var(--main-font-color) solid;
+  border-radius: 20px;
+  box-shadow: var(--main-font-color) 2px 2px 15px;
+  align-items: center;
+  min-width: 600px;
+
+  &__desktop {
+    width: 40%;
   }
-  
-  .card:hover {
-    transform: scale(1.01);
-    transition: 0.5s;
+
+  &__tablet {
+    width: 60%;
+    min-width: 400px;
   }
+
+  &__mobile {
+    width: 80%;
+    min-width: 200px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transition: 0.5s;
+}
