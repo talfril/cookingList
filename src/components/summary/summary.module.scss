@@ -1,0 +1,56 @@
+.summary {
+  background: var(--header-background-color);
+  color: var(--font-color);
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+  border: 2px var(--main-font-color) solid;
+  justify-self: end;
+  min-height: 10%;
+  position: fixed;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.selectedDish {
+  background-color: var(--main-accent-color);
+  border-radius: 0 20px 0 20px;
+  color: var(--main-font-color);
+  padding: 5px 15px;
+  width: auto;
+  max-width: 80%;
+  border: 2px var(--main-font-color) solid;
+  z-index: 1;
+}
+
+.dishesBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.plus {
+  font-size: large;
+  font-weight: 900;
+}
+
+.bonAppetit {
+  color: var(--font-color);
+  align-self: center;
+  padding-bottom: 40px;
+  font-weight: 900;
+}
+
+.iconsLink {
+  color: var(--font-color);
+  align-self: end;
+}
+
+.iconsLink:hover {
+  transform: scale(1.2);
+  color: var(--main-accent-color);
+  transition: 1s;
+}

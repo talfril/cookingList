@@ -1,0 +1,54 @@
+:root {
+  --main-background-color: #dfbb99;
+  --main-font-color: #666;
+  --header-background-color: rgb(110, 111, 115, 0.7);
+  --menu-background-color: rgb(110, 111, 115, 0.8);
+  --main-accent-color: #cc3;
+  --menu-color: rgb(153, 153, 102, 0.9);
+  --font-color: #feffff;
+  --error-color: rgb(110, 37, 37);
+  --background-gradient: linear-gradient(
+    45deg,
+    var(--main-background-color) 30%,
+    var(--main-accent-color) 60%
+  );
+  --accent-gradient: linear-gradient(
+    135deg,
+    var(--main-accent-color) 20%,
+    var(--main-background-color) 70%
+  );
+}
+
+body,
+h1,
+h2,
+h3,
+button,
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-size: clamp(0.938rem, 0.757rem + 0.965vw, 1.625rem);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+Link, a, link, li {
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}

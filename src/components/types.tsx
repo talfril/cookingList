@@ -18,12 +18,22 @@ export interface CookingListProps {
   setSelectedSecondDish: (dish: string) => void;
 }
 
+export type SummaryProps = {
+  firstDish: string;
+  secondDish: string;
+};
+
+export type NameplateProps = {
+  children: string;
+  type?: 'basic' | 'light' | 'accent' | 'dark';
+};
+
 export type SelectMenuProps = {
   children: ReactNode;
 };
 
 export interface CardComponentProps {
-  cardTitle: string;
+  cardTitle?: string;
   cardInner: React.ReactNode;
   cardButton?: React.ReactNode;
   className?: string;
@@ -32,6 +42,7 @@ export interface CardComponentProps {
 export interface ButtonProps {
   buttonText?: string;
   buttonOnClick?: () => void;
+  variant?: 'simple' | 'login';
   buttonType: 'button' | 'submit' | 'reset' | undefined;
   buttonImageUrl?: string;
   className?: string;
@@ -39,5 +50,23 @@ export interface ButtonProps {
 
 export interface ModaleProps {
   children: React.ReactNode;
+  show: boolean;
   onClose: () => void;
+}
+
+export interface MenuUnitProps {
+  children: string;
+  link: string;
+}
+
+export interface Recipe {
+  name: string;
+  ingredients: Record<string, string | undefined>;
+  cooking: string;
+  image: string;
+}
+
+export interface RecipeCardProps {
+  recipe: Recipe;
+  onClick: () => void;
 }

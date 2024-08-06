@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './select-menu.module.css';
+import styles from './select-menu.module.scss';
 import { AddMenu } from '../add-menu/add-menu';
 import { DishesProvider } from '../../context/DishesContext';
 import { SelectMenuProps } from '../types';
 import clsx from 'clsx';
 import useDevice from '../../utils/useDevice';
-import Modal from '../modal/modal';
-import Button from '../button/button';
+import Modal from '../ui/modal/modal';
+import Button from '../ui/button/button';
 import { addButtonText } from '../../data/textProps';
 
 export const SelectMenu = (props: SelectMenuProps) => {

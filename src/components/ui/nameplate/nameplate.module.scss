@@ -1,0 +1,30 @@
+.nameplate {
+  border-radius: 0 20px 0 20px;
+    padding: 5px 15px;
+    max-width: auto;
+    box-sizing: border-box;
+    border: 2px var(--main-font-color) solid;
+    z-index: 1;
+
+    &__basic {
+      background-color: var(--menu-color);
+      color: var(--font-color);
+    }
+
+    &__accent {
+      background-color: var(--main-accent-color);
+      color: var(--main-font-color);
+    }
+
+    &__light{
+      background-color: var(--font-color);
+      color: var(--main-font-color);
+    }
+
+    &__dark {
+      background-color: var(--main-font-color);
+      color: var(--font-color);
+    }
+  }
+
+  

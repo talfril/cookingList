@@ -15,14 +15,21 @@ module.exports = {
       {
         test: /\.(ts)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'ts-loader'
-        }
+        use: 'ts-loader'
       },
       {
         test: /\.css$/,
         exclude: /\.module\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+        include: path.resolve(__dirname, 'src')
       },
       {
         test: /\.module\.css$/i,
@@ -33,7 +40,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]__[hash:base64:5]' 
+                localIdentName: '[local]__[hash:base64:5]'
               }
             }
           },
@@ -56,30 +63,17 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico' 
+      favicon: './public/favicon.ico'
     }),
-
     new Dotenv()
   ],
   resolve: {
-    extensions: [
-      '*',
-      '.js',
-      '.jsx',
-      '.ts',
-      '.tsx',
-      '.json',
-      '.css',
-      '.scss',
-      '.png',
-      '.svg',
-      '.jpg'
-    ],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss', '.png', '.svg', '.jpg'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
-    publicPath: '/' 
+    publicPath: '/cookingList/'
   },
   devServer: {
     static: path.join(__dirname, './dist'),

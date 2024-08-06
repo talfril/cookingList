@@ -1,0 +1,29 @@
+.main {
+    text-align: center;
+    background-color: var(--error-color);
+    display: block;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 0 20px 0 20px;
+}
+
+.pageTitle {
+    text-transform: uppercase;
+    font-size: clamp(1rem, 0.901rem + 0.526vw, 1.375rem);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.error404 {
+    font-size: clamp(3.125rem, 2.796rem + 1.754vw, 4.375rem);
+    color: var(--font-color);
+    font-weight: 900;
+
+}
+
+.text {
+    text-transform: uppercase;
+    font-size: clamp(0.875rem, 0.842rem + 0.175vw, 1rem);
+    color: var(--font-color);
+    font-weight: 600;
+}

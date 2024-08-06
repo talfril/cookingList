@@ -1,0 +1,11 @@
+.mainPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas {
+    background-color: rgb(238, 130, 238, 0.5);
+    outline: 6px solid blue;
+    justify-self: center;
+    align-self: center;
+}

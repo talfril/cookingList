@@ -1,0 +1,49 @@
+.navigation {
+    position: fixed;
+    top: 40vh;
+    left: 0;
+    z-index: 10;
+
+}
+
+.navigationMenu {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(-90%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.navigationOpen .navigationMenu {
+    transform: translateX(0); 
+}
+
+.navigationList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 20px;
+    margin: 0;
+    height: 100%;
+}
+
+.toggleButton {
+    position: relative;
+    height: 0;    
+    width: 10px;
+    border-left: 20px solid var(--menu-color);
+    border-top: 12vh solid transparent; 
+    border-bottom: 12vh solid transparent; 
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navigationOpen .toggleButton {
+    opacity: 0.5; 
+    transform: rotate(180deg);
+}

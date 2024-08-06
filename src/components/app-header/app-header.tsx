@@ -1,4 +1,4 @@
-import styles from './app-header.module.css';
+import styles from './app-header.module.scss';
 import React from 'react';
 import { mainTitle, subTitle } from '../../data/textProps';
 import clsx from 'clsx';

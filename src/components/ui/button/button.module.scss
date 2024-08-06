@@ -1,0 +1,64 @@
+.button {
+  padding: 5px 10px;
+  border: 2px var(--main-font-color) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+  background: var(--main-accent-color);
+  color: var(--main-font-color);
+  font-weight: 800;
+  border-radius: 0 20px 0 20px;
+  box-shadow: var(--main-font-color) 2px 2px 5px;
+  font-size: clamp(0.625rem, 0.461rem + 0.877vw, 1.25rem);
+
+  &__desktop {
+    width: 500px;
+  }
+
+  &__tablet {
+    width: 350px;
+  }
+
+  &__mobile {
+    width: 250px;
+  }
+
+  &:hover {
+    box-shadow: var(--font-color) 0px 0px 25px;
+    border: 2px var(--font-color) solid;
+    transition: 0.8s;
+  }
+  
+  &:active {
+    background: var(--font-color);
+  }
+  
+  
+
+  .buttonIcon {
+    width: 25px;
+    height: 25px;
+
+    &__tablet {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__mobile {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:hover {
+      transform: rotate(-720deg);
+      transition: 5s;
+    }
+    
+    &:Active {
+      transform: rotate(720deg);
+      transition: 2s;
+    }
+  }
+}
+

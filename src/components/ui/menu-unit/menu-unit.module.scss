@@ -1,0 +1,31 @@
+.menuUnit {
+    background-color: var(--menu-background-color);
+    color: var(--font-color);
+    font-size: clamp(0.875rem, 0.809rem + 0.351vw, 1.125rem);
+    padding: 5px 10px;
+    display: block;
+    min-width: fit-content;
+    text-wrap: nowrap;
+    outline: var(--main-font-color) 2px solid;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+
+    &:hover {
+        color: var(--main-accent-color);
+        background-color: var(--header-background-color);
+        transform: translateX(20px);
+        transition: 0.3s ease-in-out;
+    }
+
+    &:focus {
+        color: blue;
+        background-color: aquamarine; 
+    }
+
+    &:active {
+        color: var(--font-color);
+        background-color: var(--menu-color);
+        transform: translateX(-20px);
+
+    }
+}

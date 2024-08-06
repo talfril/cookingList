@@ -1,0 +1,40 @@
+.card {
+  background-color: var(--menu-color);
+  padding: 20px 20px;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border: 2px var(--main-font-color) solid;
+  border-radius: 0 20px 0 20px;
+  box-shadow: var(--main-font-color) 2px 2px 15px;
+  align-items: center;
+  min-width: 400px;
+  max-width: 600px;
+
+  &__desktop {
+    width: 40%;
+  }
+
+  &__tablet {
+    max-width: fit-content;
+    min-width: 400px;
+  }
+
+  &__mobile {
+    width: fit-content;
+    min-width: 200px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.01);
+  transition: 0.5s;
+}
+
+@media screen and (min-width:1250px) {
+  .card {
+    min-width: 700px;
+  }
+}

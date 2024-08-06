@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import styles from './cooking-list.module.css';
+import styles from './cooking-list.module.scss';
 import {
   firstDishTitle,
   secondDishTitle,
@@ -8,9 +8,9 @@ import {
 } from '../../data/textProps';
 import { useDishes } from '../../context/DishesContext';
 import useDevice from '../../utils/useDevice';
-import CardComponent from '../card-component/card-component';
+import CardComponent from '../ui/card-component/card-component';
 import { CookingListProps } from '../types';
-import Button from '../button/button';
+import Button from '../ui/button/button';
 
 export const CookingList: React.FC<CookingListProps> = ({
   setSelectedFirstDish,

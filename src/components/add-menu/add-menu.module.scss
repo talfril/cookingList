@@ -1,0 +1,83 @@
+.addMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  background-color: inherit;
+  color: var(--font-color);
+}
+
+.addMenuForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+}
+
+.modaleCardComponent {
+  z-index: 4;
+}
+
+.newDishInput {
+  background-color: var(--font-color);
+  padding: 10px 50px 10px 15px;
+  border: 2px solid var(--main-font-color);
+  border-radius: 0 20px 0 20px;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--main-font-color);
+  width: 70%;
+}
+
+.newDishInput:focus {
+  border: 2px solid var(--main-accent-color);
+  outline: 2px solid var(--main-accent-color);
+}
+
+.error {
+  padding: 0 10px;
+  border-radius: 0 20px 0 20px;
+  outline: 2px var(--error-color) dotted;
+  color: var(--error-color);
+  /* text-align: center; */
+  font-size: clamp(0.75rem, 0.704rem + 0.247vi, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+clip-path: inset(50%);
+  width: 1px;
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+} 
+
+.castomCheсkbox {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 17px;
+  width: 17px;
+  background-color: var(--main-font-color);
+  border-radius: 50%;
+}
+
+input[type='radio']:checked + .castomCheсkbox {
+  background-color: var(--main-accent-color);
+  outline: 1px solid var(--main-font-color);
+}
+
+
+input[type='radio']:focus + .castomCheсkbox {
+  outline: 2px solid var(--font-color);
+}
+
+input[type='radio']:focus-visible + .castomCheсkbox {
+  outline: 2px solid var(--font-color);
+}

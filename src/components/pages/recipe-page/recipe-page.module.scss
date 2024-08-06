@@ -1,0 +1,107 @@
+.recipesContainer {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 40px); 
+    
+
+    &__desktop {
+
+    }
+
+    &__tablet {
+
+    }
+
+    &__mobile {
+
+    }
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    &__desktop {
+
+    }
+
+    &__tablet {
+
+    }
+
+    &__mobile {
+        width: 300px;
+    }
+}
+
+.recipeImageBlock {
+    display: flex;
+
+
+    &__desktop {
+        column-gap: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__tablet {
+        column-gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__mobile {
+        row-gap: 10px;
+        padding-bottom: 10px;
+        flex-direction: column;
+    }
+}
+
+.ingredientList {
+    display: flex;
+    flex-direction: column;
+
+
+    &__desktop {
+
+    }
+
+    &__tablet {
+        font-size: 12px
+    }
+
+    &__mobile {
+        font-size: 11px
+    }
+}
+
+.ingredientItem {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.selectedRecipeImage {
+    object-fit: fill;
+    object-position: center;
+    border-radius: 20%;
+
+
+    &__desktop {
+        width: 450px; 
+        height: 300px; 
+    }
+
+    &__tablet {
+        width: 330px; 
+        height: 220px; 
+    }
+
+    &__mobile {
+        width: 100%; 
+        height: auto; 
+    }
+}
